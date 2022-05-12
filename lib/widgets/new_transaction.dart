@@ -40,7 +40,10 @@ class _NewTransactionState extends State<NewTransaction> {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
             TextField(
-              decoration: InputDecoration(labelText: 'Title'),
+              decoration: InputDecoration(
+                  labelText: 'Title',
+                  labelStyle: TextStyle(
+                      fontFamily: 'Quicksans', fontWeight: FontWeight.bold)),
               controller: titleController,
               onSubmitted: (_) => submitData(),
               // onChanged: (val) {
@@ -48,14 +51,20 @@ class _NewTransactionState extends State<NewTransaction> {
               // },
             ),
             TextField(
-              decoration: InputDecoration(labelText: 'Amount'),
+              decoration: InputDecoration(
+                  labelText: 'Amount',
+                  labelStyle: TextStyle(
+                      fontFamily: 'Quicksans', fontWeight: FontWeight.bold)),
               controller: amountController,
               keyboardType: TextInputType.number,
               onSubmitted: (_) => submitData(),
               // onChanged: (val) => amountInput = val,
             ),
             FlatButton(
-              child: Text('Add Transaction'),
+              child: Text(
+                'Add Transaction',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
               textColor: Colors.purple,
               onPressed: submitData,
             ),
